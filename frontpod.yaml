@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpenim
+  labels:
+    app: ahmet
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ahmet
+  template:
+    metadata:
+      labels:
+        app: ahmet
+    spec:
+      containers:
+      - name: ahmetafyon
+        image: ahmetbasari/kuber:1.0
+        ports:
+        - containerPort: 80
